@@ -5,7 +5,7 @@ import Design from '@/components/design/Design'
 export async function fetchBlogs(){
 
   try {
-    const res = await fetch('http://localhost:3000/api/blog', {cache: 'no-store'})
+    const res = await fetch('https://project-idea-xywm.vercel.app/api/blog', {cache: 'no-store'})
     return res.json()
     // Process the response
   } catch (error) {
