@@ -1,13 +1,20 @@
 import BlogCard from '@/components/blogCard/BlogCard'
-import { blogs } from '@/lib/data'
-import Image from 'next/image'
 import classes from './page.module.css'
 import Design from '@/components/design/Design'
 
 export async function fetchBlogs(){
-  const res = await fetch('http://localhost:3000/api/blog', {cache: 'no-store'})
 
-  return res.json()
+  try {
+    const res = await fetch('http://localhost:3000/api/blog', {cache: 'no-store'})
+    return res.json()
+    // Process the response
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    // Handle the error appropriately
+  }
+  
+
+  
 }
 
 
